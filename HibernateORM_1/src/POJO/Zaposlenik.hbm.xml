@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.02.2019. 00:18:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.Zaposlenik" table="zaposlenik" catalog="zavrsnirad" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="avioKompanija" type="int">
+            <column name="avioKompanija" not-null="true" />
+        </property>
+        <property name="ime" type="string">
+            <column name="ime" length="50" not-null="true" />
+        </property>
+        <property name="prezime" type="string">
+            <column name="prezime" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true" />
+        </property>
+        <property name="brojMobitela" type="int">
+            <column name="brojMobitela" not-null="true" />
+        </property>
+        <property name="brojUgovora" type="java.lang.Integer">
+            <column name="brojUgovora" />
+        </property>
+        <property name="oib" type="string">
+            <column name="oib" length="11" />
+        </property>
+        <set name="aviokompanijas" table="aviokompanija" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="zaposlenik" not-null="true" />
+            </key>
+            <one-to-many class="POJO.Aviokompanija" />
+        </set>
+    </class>
+</hibernate-mapping>

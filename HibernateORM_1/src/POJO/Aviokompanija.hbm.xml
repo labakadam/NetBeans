@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.02.2019. 00:18:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.Aviokompanija" table="aviokompanija" catalog="zavrsnirad" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="osiguranje" class="POJO.Osiguranje" fetch="select">
+            <column name="osiguranje" not-null="true" />
+        </many-to-one>
+        <many-to-one name="zaposlenik" class="POJO.Zaposlenik" fetch="select">
+            <column name="zaposlenik" not-null="true" />
+        </many-to-one>
+        <property name="naziv" type="string">
+            <column name="naziv" length="50" not-null="true" />
+        </property>
+        <property name="let" type="string">
+            <column name="let" length="50" not-null="true" />
+        </property>
+        <property name="avion" type="string">
+            <column name="avion" length="50" not-null="true" />
+        </property>
+        <property name="oib" type="string">
+            <column name="oib" length="11" not-null="true" />
+        </property>
+        <property name="iban" type="string">
+            <column name="iban" length="21" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
