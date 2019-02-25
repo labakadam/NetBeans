@@ -1,4 +1,4 @@
-package safeflyeu1;
+package safeflyeu;
 
 // domaća zadaća:
 
