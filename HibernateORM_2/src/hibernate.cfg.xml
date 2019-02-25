@@ -7,11 +7,11 @@
      
     <!-- 
     Kreirati bazu 
-        create database zavrsnirad character set utf8 collate utf8_general_ci;
+        create database safeflyeu_hib character set utf8 collate utf8_general_ci;
 
      --> 
   
-    <property name="connection.url">jdbc:mysql://localhost:3306/zavrsnirad</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/safeflyeu_hib</property>
     <property name="connection.username">edunova</property>
     <property name="connection.password">edunova</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
@@ -32,7 +32,7 @@
     create-drop: drop the schema at the end of the session. 
     1. puta create, poslije update
     -->
-    <property name="hbm2ddl.auto">update</property>
+    <property name="hbm2ddl.auto">create</property>
   
     <!-- JDBC connection pool (use the built-in) -->
     <property name="connection.pool_size">1</property>
@@ -41,11 +41,11 @@
     
     
     <!-- moraju se slijedno navesti klase koje su mapirane -->
-     <mapping class="edunova.model.Osiguranje" /> 
-     <mapping class="edunova.model.Korisnik" /> 
-     <mapping class="edunova.model.Zaposlenik" /> 
-     <mapping class="edunova.model.AvioKompanija" /> 
-     <mapping class="edunova.model.Korisnik_AvioKompanija" /> 
+     <mapping class="safeflyeu.model.Osiguranje" /> 
+     <mapping class="safeflyeu.model.Zaposlenik" /> 
+     <mapping class="safeflyeu.model.Korisnik" /> 
+     <mapping class="safeflyeu.model.AvioKompanija" /> 
+     <mapping class="safeflyeu.model.Korisnik_AvioKompanija" />
    
 </session-factory>
 </hibernate-configuration>
