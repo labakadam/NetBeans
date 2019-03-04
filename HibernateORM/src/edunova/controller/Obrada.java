@@ -5,16 +5,21 @@
  */
 package edunova.controller;
 
+import edunova.model.Predavac;
+
 /**
  *
  * @author Profesor
  */
 public abstract class Obrada<T> {
-
+    
+    
     protected DAO<T> dao;
-
-    public Obrada() {
+    
+    public Obrada(){
         dao = new DAO<>();
     }
 
+    
+    
 }
