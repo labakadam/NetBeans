@@ -10,9 +10,9 @@ package edunova.controller;
  * @author Profesor
  * @param <T>
  */
-public abstract class Obrada<T> {
+public abstract class Obrada<K> {
 
-    protected DAO<T> dao;
+    protected DAO<K> dao;
 
     public Obrada() {
         dao = new DAO<>();
