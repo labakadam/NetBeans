@@ -5,8 +5,6 @@
  */
 package safeflyeu.controller;
 
-import safeflyeu.model.Korisnik;
-
 /**
  *
  * @author labak
@@ -19,7 +17,5 @@ public abstract class Obrada<T> {
         dao = new DAO<>();
     }
 
-    void kontrola(Korisnik k) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 }

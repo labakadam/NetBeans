@@ -13,36 +13,33 @@ import safeflyeu.pomocno.SafeFlyEUException;
  *
  * @author labak
  */
-public abstract class ObradaOsiguranje<T extends Osiguranje> extends Obrada {
-    
-    public ObradaOsiguranje(){
+public class ObradaOsiguranje extends Obrada<Osiguranje> {
+
+    public ObradaOsiguranje() {
         super();
     }
-    
-    public void kontrola(Osiguranje o) throws SafeFlyEUException{
-        if(o.getVrsta()==null){
+
+    public void kontrola(Osiguranje o) throws SafeFlyEUException {
+        if (o.getVrsta() == null) {
             throw new SafeFlyEUException("Vrsta osiguranja nije definirana");
         }
-        if(o.getVrsta().trim().isEmpty()){
+        if (o.getVrsta().trim().isEmpty()) {
             throw new SafeFlyEUException("Vrsta osiguranja nije unesena");
         }
-        if(o.getNaziv()==null){
+        if (o.getNaziv() == null) {
             throw new SafeFlyEUException("Naziv osiguranja nije definiran");
         }
-        if(o.getNaziv().trim().isEmpty()){
+        if (o.getNaziv().trim().isEmpty()) {
             throw new SafeFlyEUException("Naziv osiguranja nije unesen");
         }
-        if(!Pomocno.checkOIB(o.getOib())){
+        if (!Pomocno.checkOIB(o.getOib())) {
             throw new SafeFlyEUException("Oib je neispravan");
         }
-            if(o.getIban()==null){
+        if (o.getIban() == null) {
             throw new SafeFlyEUException("IBAN nije definiran");
         }
-        if(o.getIban().trim().isEmpty()){
+        if (o.getIban().trim().isEmpty()) {
             throw new SafeFlyEUException("IBAN nije unesen");
         }
     }
-        
-    }
-   
-
+}

@@ -25,7 +25,6 @@ public class Korisnik extends Entitet implements Serializable {
     private String prezime;
     private String oib;
     private String email;
-    private int brojMobitela;
 
     public Osiguranje getOsiguranje() {
         return osiguranje;
@@ -65,14 +64,6 @@ public class Korisnik extends Entitet implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getBrojMobitela() {
-        return brojMobitela;
-    }
-
-    public void setBrojMobitela(int brojMobitela) {
-        this.brojMobitela = brojMobitela;
     }
 
 }
