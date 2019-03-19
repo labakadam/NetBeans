@@ -21,8 +21,8 @@ public class Zaposlenik extends Entitet implements Serializable {
     private String ime;
     private String prezime;
     private String email;
-    private int brojMobitela;
-    private int brojUgovora;
+    private String brojMobitela;
+    private String brojUgovora;
     private String oib;
 
     public int getAvioKomapnija() {
@@ -57,19 +57,19 @@ public class Zaposlenik extends Entitet implements Serializable {
         this.email = email;
     }
 
-    public int getBrojMobitela() {
+    public String getBrojMobitela() {
         return brojMobitela;
     }
 
-    public void setBrojMobitela(int brojMobitela) {
+    public void setBrojMobitela(String brojMobitela) {
         this.brojMobitela = brojMobitela;
     }
 
-    public int getBrojUgovora() {
+    public String getBrojUgovora() {
         return brojUgovora;
     }
 
-    public void setBrojUgovora(int brojUgovora) {
+    public void setBrojUgovora(String brojUgovora) {
         this.brojUgovora = brojUgovora;
     }
 

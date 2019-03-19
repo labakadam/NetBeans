@@ -5,7 +5,9 @@
  */
 package safeflyeu.controller;
 
+import java.util.List;
 import safeflyeu.model.Osiguranje;
+import safeflyeu.pomocno.HibernateUtil;
 import safeflyeu.pomocno.Pomocno;
 import safeflyeu.pomocno.SafeFlyEUException;
 
@@ -17,6 +19,26 @@ public class ObradaOsiguranje extends Obrada<Osiguranje> {
 
     public ObradaOsiguranje() {
         super();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<ObradaOsiguranje> getLista() {
+        return HibernateUtil.getSession().createQuery("from Osiguranje").list();
+    }
+
+    public Osiguranje save(Osiguranje o) throws SafeFlyEUException {
+
+        kontrola(o);
+
+        return dao.save(o);
+    }
+
+    public void obrisi(Osiguranje o) throws SafeFlyEUException {
+
+        dao.delete(o);
     }
 
     public void kontrola(Osiguranje o) throws SafeFlyEUException {
@@ -42,4 +64,5 @@ public class ObradaOsiguranje extends Obrada<Osiguranje> {
             throw new SafeFlyEUException("IBAN nije unesen");
         }
     }
+
 }

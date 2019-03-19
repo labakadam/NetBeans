@@ -13,16 +13,16 @@ public class SafeFlyEUException extends Exception {
 
     private int code;
 
-    public SafeFlyEUException(String vrsta_nije_definirana) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public int getCode() {
         return code;
     }
 
     public void setCode(int code) {
         this.code = code;
+    }
+    
+    public SafeFlyEUException(String poruka) {
+        super(poruka);
     }
 
 }

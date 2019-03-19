@@ -19,6 +19,17 @@ import javax.persistence.Table;
 @Table
 public class Korisnik_AvioKompanija extends Entitet implements Serializable {
 
+    @ManyToOne
+    private Korisnik korisnik;
+
+    @ManyToOne
+    private AvioKompanija avioKompanija;
+
+    private String oznakaSjedala;
+    private boolean hrana;
+    private boolean pice;
+    private boolean prtljaga;
+
     public Korisnik getKorisnik() {
         return korisnik;
     }
@@ -66,16 +77,5 @@ public class Korisnik_AvioKompanija extends Entitet implements Serializable {
     public void setPrtljaga(boolean prtljaga) {
         this.prtljaga = prtljaga;
     }
-
-    @ManyToOne
-    private Korisnik korisnik;
-
-    @ManyToOne
-    private AvioKompanija avioKompanija;
-
-    private String oznakaSjedala;
-    private boolean hrana;
-    private boolean pice;
-    private boolean prtljaga;
 
 }

@@ -30,20 +30,20 @@ public class AvioKompanija extends Entitet implements Serializable {
     private String oib;
     private String iban;
 
-    public Zaposlenik getZaposlenik() {
-        return zaposlenik;
-    }
-
-    public void setZaposlenik(Zaposlenik zaposlenik) {
-        this.zaposlenik = zaposlenik;
-    }
-
     public Osiguranje getOsiguranje() {
         return osiguranje;
     }
 
     public void setOsiguranje(Osiguranje osiguranje) {
         this.osiguranje = osiguranje;
+    }
+
+    public Zaposlenik getZaposlenik() {
+        return zaposlenik;
+    }
+
+    public void setZaposlenik(Zaposlenik zaposlenik) {
+        this.zaposlenik = zaposlenik;
     }
 
     public String getNaziv() {

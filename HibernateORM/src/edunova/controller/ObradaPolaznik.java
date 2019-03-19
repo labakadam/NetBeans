@@ -5,7 +5,6 @@
  */
 package edunova.controller;
 
-import edunova.model.Grupa;
 import edunova.model.Polaznik;
 import edunova.pomocno.EdunovaException;
 import edunova.pomocno.HibernateUtil;

@@ -5,17 +5,17 @@
  */
 package safeflyeu.controller;
 
-import java.io.Serializable;
 import java.util.List;
 import safeflyeu.model.Korisnik;
 import safeflyeu.pomocno.HibernateUtil;
+import safeflyeu.pomocno.ObradaSucelje;
 import safeflyeu.pomocno.SafeFlyEUException;
 
 /**
  *
  * @author labak
  */
-public class ObradaKorisnik extends Obrada<Korisnik> implements Serializable {
+public class ObradaKorisnik extends Obrada<Korisnik> implements ObradaSucelje<Korisnik>{
 
     public List<Korisnik> getLista() {
         return HibernateUtil.getSession().createQuery("from Korisnik").list();
@@ -66,7 +66,6 @@ public class ObradaKorisnik extends Obrada<Korisnik> implements Serializable {
         if (k.getOib().trim().isEmpty()) {
             throw new SafeFlyEUException("Oib je obavezan");
         }
-        
     }
 
 }

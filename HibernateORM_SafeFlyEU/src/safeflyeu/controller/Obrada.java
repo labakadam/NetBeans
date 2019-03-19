@@ -10,12 +10,11 @@ package safeflyeu.controller;
  * @author labak
  */
 public abstract class Obrada<T> {
-    
+
     protected DAO<T> dao;
-    
-    public Obrada(){
+
+    public Obrada() {
         dao = new DAO<>();
     }
 
-  
 }
